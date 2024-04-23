@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="@color/appcolor"
+    android:background="@color/black"
     >
 
     <ImageView
@@ -16,13 +16,16 @@
         android:scaleType="centerCrop"/>
 
     <TextView
+        android:id="@+id/headertext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="4K STREAMZ"
+        android:textStyle="bold"
         android:textSize="26sp"
         android:textColor="@color/white"/>
 
     <TextView
+        android:id="@+id/headeremail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="nightbirdscompany@gmail.com"

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -18,6 +19,8 @@ import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     MaterialToolbar toolbar;
     FrameLayout framlay;
     NavigationView navview;
+    View headerview;
+    TextView headername, headeremail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +44,27 @@ public class MainActivity extends AppCompatActivity {
         toolbar =findViewById(R.id.toolbar);
         framlay =findViewById(R.id.framlay);
         navview = findViewById(R.id.navview);
+        headerview = navview.getHeaderView(0);
+        headername = headerview.findViewById(R.id.headertext);
+        headeremail = headerview.findViewById(R.id.headeremail);
+
+        FragmentManager fmanager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =fmanager.beginTransaction();
+        fragmentTransaction.add(R.id.framlay, new MainhomeFragment());
+        fragmentTransaction.commit();
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 MainActivity.this, drawlay, toolbar, R.string.drawer_close, R.string.drawer_open);
 
         drawlay.addDrawerListener(toggle);
+
+
+
+
+
+
+
 
         navview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

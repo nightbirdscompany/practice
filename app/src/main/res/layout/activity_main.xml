@@ -21,7 +21,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/appcolor"
+                android:background="@color/black"
                 app:menu="@menu/toolbar_items"
                 app:navigationIcon="@drawable/menuic"
                 app:navigationIconTint="@color/white"
@@ -35,6 +35,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?attr/actionBarSize" />
+
+
+        <!-- for meow naav  -->
+
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
     
